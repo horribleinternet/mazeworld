@@ -1,0 +1,9 @@
+
+    Install uv: curl -LsSf https://astral.sh/uv/install.sh | sh
+    Initialize it in your project: uv init (This will create the files pyproject.toml, .python-version, a blank README.md, and git if it wasn't already)
+    Create a new virtual environment: uv venv (This will create a hidden directory: .venv. It will not conflict with your current venv directory)
+    Initialize the correct virtual environment: source .venv/bin/activate
+    Add dependencies: uv add -r requirements.txt (This installs deps and creates a uv.lock file)
+    Now it is safe to remove the old virtual environment (venv) and the requirements.txt file: rm -rf venv and rm requirements.txt
+    Of course, test your application to make sure everything still works
+
