@@ -1,0 +1,11 @@
+SCREEN_WIDTH = 1280
+SCREEN_HEIGHT = 720
+
+VIEWPORT_WIDTH = 640
+VIEWPORT_HEIGHT = 480
+
+VIEWPORT_OFFSET_X = 0
+VIEWPORT_OFFSET_Y = 0
+
+def viewport_coord(x, y):
+    return x, y
