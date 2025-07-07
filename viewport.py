@@ -5,7 +5,7 @@ from pygame import Color, draw;
 class Viewport:
     def __init__(self, view):
         self.view = view
-    
+
     def draw(self, forward_map):
         v = self.view
         draw.line(v.surface, v.default_color, v.coordfunc(1., 0.), v.coordfunc(1., 0.75), v.default_width)

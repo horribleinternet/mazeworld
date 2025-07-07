@@ -16,7 +16,7 @@ class Map:
        max_width = reduce(max, map(len, grid))
        for row in grid:
            row.extend([get_default_block() for x in range(max_width-len(row))])
-       
+
     def enclose_map(self, grid):
         for block in grid[0]:
             block.solid = True
@@ -25,4 +25,3 @@ class Map:
         for row in grid[1:-1]:
             row[0].solid = True
             row[-1].solid = True
-        
