@@ -1,4 +1,5 @@
 from enum import Enum
+from pygame import Vector2
 
 class Dir(Enum):
     NORTH = 0
@@ -6,25 +7,27 @@ class Dir(Enum):
     SOUTH = 2
     WEST = 3
 
-def reverse_dir(direction):
-    return (direction + 2) % 4
+DIR_VECTORS = { Dir.NORTH: (0, -1), Dir.EAST: (1, 0), Dir.SOUTH: (0, 1), Dir.WEST: (-1,0) }
 
-def clock_dir(direction):
-    return (direction + 1) % 4
+DIR_REVERSE = { Dir.NORTH: Dir.SOUTH, Dir.EAST: Dir.WEST, Dir.SOUTH: Dir.NORTH, Dir.WEST: Dir.EAST }
 
-def counter_dir(direction):
-    if (direction > 0):
-        return direction - 1
-    else:
-        return Dir.WEST
+DIR_CLOCK = { Dir.NORTH: Dir.EAST, Dir.EAST: Dir.SOUTH, Dir.SOUTH: Dir.WEST, Dir.WEST: Dir.NORTH }
+
+DIR_COUNTER = { Dir.NORTH: Dir.WEST, Dir.EAST: Dir.NORTH, Dir.SOUTH: Dir.EAST, Dir.WEST: Dir.SOUTH }
+
+def dist_half_width(dist):
+    return dist + 1
+
+def dist_width_range(dist):
+    return -(dist + 1), dist + 1
 
 def seeable(facing, face, offset):
-    if facing == reverse_dir(face):
+    if facing == DIR_REVERSE(face):
         return True
     if offset < 0:
-        if clock_dir(facing) == face:
+        if DIR_CLOCK[facing] == face:
             return True
     elif offset > 0:
-        if counter_dir(facing) == face:
+        if DIR_COUNTER[facing] == face:
             return True
     return False
