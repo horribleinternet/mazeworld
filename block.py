@@ -1,12 +1,19 @@
 from direction import seeable
+from visual import WallVisual
+
+def get_default_block():
+    return Block(True)
 
 class Block:
-    def __init__(self, solid, visual, faceobjs, centerobjs):
+    def __init__(self, solid, visual = WallVisual(), faceobjs = None, centerobjs = None):
         self.solid = solid
         self.visual = visual
         self.faceobjs = faceobjs
         self.centerobjs = centerobjs
 
+    def set_solid(self, s = True):
+        self.solid = s
+    
     def draw(self, surface, facing, distance, offset):
         if self.visual is not None:
             self.visual.draw(surface, facing, distance, offset)
