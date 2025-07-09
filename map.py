@@ -1,7 +1,25 @@
 from functools import reduce
-from block import get_default_block, Block
+from block import get_default_block
 from pygame import Vector2
 from direction import get_line, DIR_CLOCK, DIR_COUNTER, dist_width, dist_half_width
+
+def printgrid(listgrid):
+    widest = -1
+    for row in listgrid:
+        if widest < len(row):
+            widest = len(row)
+        if len(row) < widest:
+            for blank in range(0,(widest-len(row))//2):
+                print("   ", end="")
+        for block in row:
+            if block is None:
+                print(" N ", end="")
+            else:
+                if block.solid:
+                    print(" S ", end="")
+                else:
+                    print(" V ", end="")
+        print("\n")
 
 class Map:
     def __init__(self, listgrid):
@@ -11,7 +29,7 @@ class Map:
         self.size = Vector2(len(listgrid[0]), len(listgrid))
 
     def get_block(self, vect):
-        return self.listgrid[vect.y][vect.x]
+        return self.listgrid[int(round(vect.y))][int(round(vect.x))]
 
     def get_viewmap(self, location, facing, distance = 3):
         viewmap = []
