@@ -1,11 +1,11 @@
 from direction import seeable
-from visual import WallVisual
+from visual import WallVisual, VoidVisual
 
 def get_default_block():
     return Block(True)
 
 class Block:
-    def __init__(self, solid, visual = WallVisual(), faceobjs = None, centerobjs = None):
+    def __init__(self, solid=True, visual = WallVisual(), faceobjs = None, centerobjs = None):
         self.solid = solid
         self.visual = visual
         self.faceobjs = faceobjs
@@ -27,3 +27,7 @@ class Block:
 
     def is_opaque(self):
         return self.visual is not None and self.visual.opaque
+
+class VoidBlock(Block):
+    def __init__(self):
+        super().__init__(False, VoidVisual())
