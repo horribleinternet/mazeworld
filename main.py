@@ -1,7 +1,10 @@
 from constants import *
 import pygame
+import testmaps
+import map
 from viewport import Viewport
 from view import View
+from direction import Dir
 
 def main():
     initialized = pygame.init()
@@ -19,6 +22,12 @@ def main():
         pygame.display.flip()
         dt = clock.tick(60) / 1000
 
-if __name__ == "__main__":
-    main()
+def test():
+    map.printgrid(testmaps.testmap1)
+    print("")
+    testmap = map.Map(testmaps.testmap1)
+    map.printgrid(testmap.get_viewmap(pygame.Vector2(1,3), Dir.EAST, 3))
 
+if __name__ == "__main__":
+    #main()
+    test()
