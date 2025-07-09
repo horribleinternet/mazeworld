@@ -8,7 +8,10 @@ class Visual:
     def draw(self, view, face, distance, offset):
         pass
 
-
 class WallVisual(Visual):
     def __init__(self):
         self.opaque = True
+
+class VoidVisual(Visual):
+    def __init__(self):
+        self.opaque = False
