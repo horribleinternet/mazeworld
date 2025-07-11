@@ -7,6 +7,12 @@ class Dir(Enum):
     SOUTH = 2
     WEST = 3
 
+class Turn(Enum):
+    COUNTER = 0
+    LEFT = 0
+    CLOCK = 1
+    RIGHT = 1
+
 DIR_VECTORS = { Dir.NORTH: Vector2(0, -1), Dir.EAST: Vector2(1, 0), Dir.SOUTH: Vector2(0, 1), Dir.WEST: Vector2(-1,0) }
 
 DIR_REVERSE = { Dir.NORTH: Dir.SOUTH, Dir.EAST: Dir.WEST, Dir.SOUTH: Dir.NORTH, Dir.WEST: Dir.EAST }
@@ -14,6 +20,8 @@ DIR_REVERSE = { Dir.NORTH: Dir.SOUTH, Dir.EAST: Dir.WEST, Dir.SOUTH: Dir.NORTH, 
 DIR_CLOCK = { Dir.NORTH: Dir.EAST, Dir.EAST: Dir.SOUTH, Dir.SOUTH: Dir.WEST, Dir.WEST: Dir.NORTH }
 
 DIR_COUNTER = { Dir.NORTH: Dir.WEST, Dir.EAST: Dir.NORTH, Dir.SOUTH: Dir.EAST, Dir.WEST: Dir.SOUTH }
+
+DIR_TURNS = {Turn.COUNTER: DIR_COUNTER, Turn.CLOCK: DIR_CLOCK}
 
 def dist_width(dist):
     return ((dist + 1) * 2) + 1
