@@ -19,7 +19,7 @@ def dist_width(dist):
     return ((dist + 1) * 2) + 1
 
 def dist_half_width(dist):
-    return dist + 1
+    return dist + 2
 
 def dist_width_range(dist):
     return -(dist + 1), dist + 1
@@ -48,6 +48,6 @@ def get_line(start, facing, length, gridsize, skip_start = False):
         if not vect_contained(pos, gridsize):
             line.append(None)
         else:
-            line.append(pos)
+            line.append(pos.copy())
         pos += DIR_VECTORS[facing]
     return line
