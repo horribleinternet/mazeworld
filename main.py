@@ -26,7 +26,7 @@ def test():
     map.printgrid(testmaps.testmap1)
     print("")
     testmap = map.Map(testmaps.testmap1)
-    map.printgrid(testmap.get_viewmap(pygame.Vector2(1,3), Dir.EAST, 3))
+    map.printgrid(testmap.get_viewmap(pygame.Vector2(2,3), Dir.EAST, 3))
 
 if __name__ == "__main__":
     #main()
