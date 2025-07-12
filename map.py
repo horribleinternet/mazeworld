@@ -54,7 +54,6 @@ class Map:
             viewmap.append(viewmap_row)
         return viewmap
 
-
     def fill_in_map(self, grid):
        max_width = reduce(max, map(len, grid))
        for row in grid:
@@ -69,3 +68,5 @@ class Map:
             row[0].solid = True
             row[-1].solid = True
 
+    def __print__(self):
+        printgrid(self.listgrid)
