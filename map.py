@@ -1,7 +1,6 @@
 from functools import reduce
 from block import get_default_block
-from pygame import Vector2
-from direction import get_line, DIR_CLOCK, DIR_COUNTER, dist_width, dist_half_width
+from direction import get_line, DIR_CLOCK, DIR_COUNTER, dist_width, dist_half_width, MapPos
 
 def printgrid(listgrid):
     widest = -1
@@ -26,7 +25,7 @@ class Map:
         self.listgrid = listgrid
         self.fill_in_map(listgrid)
         self.enclose_map(listgrid)
-        self.size = Vector2(len(listgrid[0]), len(listgrid))
+        self.size = MapPos(len(listgrid[0]), len(listgrid))
 
     def get_block(self, vect):
         return self.listgrid[int(round(vect.y))][int(round(vect.x))]

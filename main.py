@@ -4,7 +4,7 @@ import testmaps
 import map
 from viewport import Viewport
 from view import View
-from direction import Dir
+from direction import Dir, MapPos
 
 def main():
     initialized = pygame.init()
@@ -26,7 +26,7 @@ def test():
     map.printgrid(testmaps.testmap1)
     print("")
     testmap = map.Map(testmaps.testmap1)
-    map.printgrid(testmap.get_viewmap(pygame.Vector2(2,3), Dir.EAST, 3))
+    map.printgrid(testmap.get_viewmap(MapPos(2,3), Dir.EAST, 4))
 
 if __name__ == "__main__":
     #main()
