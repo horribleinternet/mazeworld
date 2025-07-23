@@ -30,6 +30,16 @@ class Map:
     def get_block(self, vect):
         return self.listgrid[int(round(vect.y))][int(round(vect.x))]
 
+    def is_solid(self, vect):
+        return self.listgrid[int(round(vect.y))][int(round(vect.x))].solid
+
+    def move(self, old, offset):
+        new = old + offset
+        if not self.is_solid(new):
+            return new
+        else:
+            return old
+
     def get_viewmap(self, location, facing, distance = 3):
         viewmap = []
         viewline = get_line(location, facing, distance, self.size)
