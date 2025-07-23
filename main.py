@@ -7,6 +7,7 @@ from view import View
 from direction import Dir, MapPos
 from player import Player
 from controller import Controller
+from world import World
 
 def main():
     initialized = pygame.init()
@@ -18,6 +19,8 @@ def main():
     testmap = map.Map(testmaps.testmap1)
     player = Player()
     controller = Controller(player, testmap)
+    world = World(testmap, controller, MapPos(1,3))
+    world.tick(viewport)
     while True:
         for event in pygame.event.get():
             match event.type:
@@ -25,9 +28,8 @@ def main():
                     return
                 case pygame.KEYDOWN:
                     controller.input(event)
+                    world.tick(viewport)
         screen.fill(pygame.Color(0,0,0))
-        viewport.draw(None)
-        pygame.display.flip()
         dt = clock.tick(60) / 1000
 
 def test():
