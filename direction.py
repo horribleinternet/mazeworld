@@ -61,6 +61,8 @@ ZERO_POS = MapPos(0,0)
 
 DIR_VECTORS = { Dir.NORTH: MapPos(0, -1), Dir.EAST: MapPos(1, 0), Dir.SOUTH: MapPos(0, 1), Dir.WEST: MapPos(-1,0) }
 
+DIR_FORWARD = { Dir.NORTH: Dir.NORTH, Dir.EAST: Dir.EAST, Dir.SOUTH: Dir.SOUTH, Dir.WEST: Dir.WEST }
+
 DIR_REVERSE = { Dir.NORTH: Dir.SOUTH, Dir.EAST: Dir.WEST, Dir.SOUTH: Dir.NORTH, Dir.WEST: Dir.EAST }
 
 DIR_CLOCK = { Dir.NORTH: Dir.EAST, Dir.EAST: Dir.SOUTH, Dir.SOUTH: Dir.WEST, Dir.WEST: Dir.NORTH }
