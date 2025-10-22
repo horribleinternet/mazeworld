@@ -2,6 +2,7 @@ from constants import *
 from view import View
 from pygame import Color, draw;
 from map import printgrid
+import numpy as np
 
 class Viewport:
     def __init__(self, view):
