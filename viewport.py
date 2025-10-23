@@ -15,6 +15,10 @@ class Viewport:
                               [0,1,0,0],
                               [0,0,1,3.5],
                               [0,0,0,1])
+        self.proj = np.array([1,0,0,0],
+                             [0,4/3,0,0],
+                             [0,0,-5.1/4.9,-1/4.9],
+                             [0,0,-1,0])
 
     def draw(self, forward_map):
         v = self.view
