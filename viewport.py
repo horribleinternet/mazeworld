@@ -28,7 +28,7 @@ class Viewport:
         p2mat = [[-3.5],[0.5],[3],[1]]
         p1c = np.matmul(self.composed, p1mat)
         p2c = np.matmul(self.composed, p2mat)
-        p1  = np.matmul(self.composed, p1c)
-        p2  = np.matmul(self.composed, p2c)
+        p1  = np.matmul(self.screen, p1c)
+        p2  = np.matmul(self.screen, p2c)
         print(p1, "\n", p2)
         printgrid(forward_map)
