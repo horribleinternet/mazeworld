@@ -32,4 +32,4 @@ class Viewport:
         p2  = np.matmul(self.screen, p2c)
         print(p1, "\n", p2)
         printgrid(forward_map)
-        print("press a key")
+
