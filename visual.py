@@ -20,6 +20,7 @@ class WallVisual(Visual):
         [ 0.5,  0.5,  0.5],
         [-0.5,  0.5,  0.5]
     ])
+
     def __init__(self):
         self.opaque = True
 
