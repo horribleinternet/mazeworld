@@ -24,6 +24,9 @@ class WallVisual(Visual):
     def __init__(self):
         self.opaque = True
 
+    def draw(self, view, face, distance, offset):
+        pass
+
 class VoidVisual(Visual):
     def __init__(self):
         self.opaque = False
