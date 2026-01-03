@@ -11,15 +11,16 @@ class Viewport:
                  [0, -VIEWPORT_HEIGHT / 2, 0, VIEWPORT_HEIGHT / 2],
                  [0,0,1,0],
                  [0,0,0,1]]
-        model = [[1,0,0,-3],
+        model = np.array{[[1,0,0,-3],
                 [0,1,0,0],
                 [0,0,1,3.5],
-                [0,0,0,1]]
-        proj = [[1,0,0,0],
+                [0,0,0,1]])
+        proj = np.array{[[1,0,0,0],
                [0,4/3,0,0],
                [0,0,-5.1/4.9,-1/4.9],
-               [0,0,-1,0]]
-        self.composed = np.matmul(proj, model)
+               [0,0,-1,0]])
+        viewmat = np.eye(4)
+        self.composed = proj @ viewmat
 
 
     def draw(self, forward_map):
