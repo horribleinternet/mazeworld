@@ -23,7 +23,7 @@ class Viewport:
         self.composed = proj @ viewmat
 
 
-    def draw(self, forward_map):
+    def draw(self, forward_map, facing):
         v = self.view
         p1mat = [[-3.5],[-0.5],[3],[1]]
         p2mat = [[-3.5],[0.5],[3],[1]]

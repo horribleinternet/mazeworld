@@ -7,5 +7,5 @@ class World:
         self.controller.player.pos = start
 
     def tick(self, viewport):
-        viewport.draw(self.map.get_viewmap(self.controller.player.pos, self.controller.player.facing))
+        viewport.draw(self.map.get_viewmap(self.controller.player.pos, self.controller.player.facing), self.controller.player.facing)
         pygame.display.flip()
