@@ -7,18 +7,21 @@ import numpy as np
 class Viewport:
     def __init__(self, view):
         self.view = view
-        self.screen = [[VIEWPORT_WIDTH / 2, 0, 0, VIEWPORT_WIDTH / 2],
-                 [0, -VIEWPORT_HEIGHT / 2, 0, VIEWPORT_HEIGHT / 2],
-                 [0,0,1,0],
-                 [0,0,0,1]]
-        model = np.array{[[1,0,0,-3],
+        self.screen = [
+                [VIEWPORT_WIDTH / 2, 0, 0, VIEWPORT_WIDTH / 2],
+                [0, -VIEWPORT_HEIGHT / 2, 0, VIEWPORT_HEIGHT / 2],
+                [0,0,1,0],
+                [0,0,0,1]]
+        model = np.array([
+                [1,0,0,-3],
                 [0,1,0,0],
                 [0,0,1,3.5],
                 [0,0,0,1]])
-        proj = np.array{[[1,0,0,0],
-               [0,4/3,0,0],
-               [0,0,-5.1/4.9,-1/4.9],
-               [0,0,-1,0]])
+        proj = np.array([
+                [1,0,0,0],
+                [0,4/3,0,0],
+                [0,0,-5.1/4.9,-1/4.9],
+                [0,0,-1,0]])
         viewmat = np.eye(4)
         self.composed = proj @ viewmat
 
