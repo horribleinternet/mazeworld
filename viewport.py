@@ -34,6 +34,6 @@ class Viewport:
         p2c = np.matmul(self.composed, p2mat)
         p1  = np.matmul(self.screen, p1c)
         p2  = np.matmul(self.screen, p2c)
-        print(p1, "\n", p2)
+        #print(p1, "\n", p2)
         printgrid(forward_map)
 
