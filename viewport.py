@@ -3,6 +3,7 @@ from view import View
 from pygame import Color, draw;
 from map import printgrid
 import numpy as np
+from models import cube
 
 class Viewport:
     def __init__(self, view):
@@ -27,6 +28,11 @@ class Viewport:
 
 
     def draw(self, forward_map, facing):
+        test_cube = cube.copy()
+        if test_cube.ndim == 1:
+            test_cube.reshape(1, -1)
+        cube_shape = test_cube.shape[0]
+        points = np.hstack([test_cube, np.ones((cube_shape, 1))])
         v = self.view
         p1mat = [[-3.5],[-0.5],[3],[1]]
         p2mat = [[-3.5],[0.5],[3],[1]]
