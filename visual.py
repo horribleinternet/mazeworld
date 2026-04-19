@@ -1,6 +1,7 @@
 from direction import Dir
 from view import View
 import numpy as np
+from models import cube
 
 class Visual:
     def __init__(self):
@@ -10,16 +11,7 @@ class Visual:
         pass
 
 class WallVisual(Visual):
-    _block = np.array([
-        [-0.5, -0.5, -0.5],
-        [ 0.5, -0.5, -0.5],
-        [ 0.5,  0.5, -0.5],
-        [-0.5,  0.5, -0.5],
-        [-0.5, -0.5,  0.5],
-        [ 0.5, -0.5,  0.5],
-        [ 0.5,  0.5,  0.5],
-        [-0.5,  0.5,  0.5]
-    ])
+    _block = cube.copy()
 
     def __init__(self):
         self.opaque = True
