@@ -20,6 +20,7 @@ def printgrid(listgrid):
                     print(" V ", end="")
         print("\n")
 
+
 class Map:
     def __init__(self, listgrid):
         self.listgrid = listgrid
