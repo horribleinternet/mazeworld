@@ -22,3 +22,4 @@ class WallVisual(Visual):
 class VoidVisual(Visual):
     def __init__(self):
         self.opaque = False
+
