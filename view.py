@@ -6,3 +6,4 @@ class View:
         self.coordfunc = coordfunc
         self.default_color = default_color
         self.default_width = default_width
+
