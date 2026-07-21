@@ -6,7 +6,6 @@ class Dir(Enum):
     SOUTH = 2
     WEST = 3
 
-
 class MapPos:
     def __init__(self, x, y):
         self.__pos = (x, y)
