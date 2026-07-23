@@ -24,3 +24,4 @@ class Controller:
     def move(self, sign):
         self.player.pos = self.map.move(self.player.pos, direction.DIR_VECTORS[sign[self.player.facing]])
 
+
