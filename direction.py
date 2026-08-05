@@ -108,3 +108,4 @@ def get_line(start, facing, length, gridsize, skip_start = False):
         pos = pos.move(facing)
     return line
 
+
