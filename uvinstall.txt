@@ -7,3 +7,4 @@
     Now it is safe to remove the old virtual environment (venv) and the requirements.txt file: rm -rf venv and rm requirements.txt
     Of course, test your application to make sure everything still works
 
+
