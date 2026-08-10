@@ -82,4 +82,3 @@ class Map:
     def __print__(self):
         printgrid(self.listgrid)
 
-
