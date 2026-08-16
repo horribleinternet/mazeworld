@@ -6,4 +6,3 @@ class Player:
         self.pos = MapPos(-1, -1)
         self.facing = Dir.NORTH
 
-
